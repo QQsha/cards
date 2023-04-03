@@ -50,7 +50,7 @@ func (s *Server) createDeckHandler() http.HandlerFunc {
 		}
 
 		if c := r.URL.Query().Get("cards"); c != "" {
-			cards = strings.Split(c, ",")
+			cards = strings.Split(strings.ToUpper(c), ",")
 		}
 
 		deck, err := s.Deck.CreateDeck(cards, shuffled)

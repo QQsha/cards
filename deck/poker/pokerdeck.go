@@ -76,7 +76,7 @@ func (d *DeckService) CreateDeck(cards []string, shuffle bool) (entity.Deck, err
 
 		for i, s := range suits {
 			for j, v := range values {
-				deck.Cards[(i*fullDeckSize/4)+j] = entity.Card{
+				deck.Cards[(i*13)+j] = entity.Card{
 					Value: v,
 					Suit:  s,
 					Code:  fmt.Sprintf("%s%s", codes[v], codes[s]),
